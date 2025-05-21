@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Безумные бизнес-идеи</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Russo One', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+
+    button {
+      background: #00ffcc;
+      border: none;
+      border-radius: 12px;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #033;
+      font-weight: bold;
+      box-shadow: 0 0 15px #00ffcc;
+      transition: background 0.3s ease, transform 0.2s ease;
+      user-select: none;
+    }
+
+    button:hover {
+      background: #00d6b8;
+      transform: scale(1.1);
+    }
+
+    #idea {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      max-width: 600px;
+      text-align: center;
+      line-height: 1.4;
+      text-shadow: 0 0 5px #00ffcc;
+      min-height: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Генератор безумных бизнес-идей </h1>
+  <button id="generateBtn">Дай мне идею!</button>
+  <div id="idea"></div>
+
+  <script>
+    const ideas = [
+      "Кафе для хомяков с VR-очки для хождения по лабиринтам.",
+      "Приложение для поиска потерянных носков с дронами-ловцами.",
+      "Аренда роботов для уборки снега с голосовым ассистентом-рэпером.",
+      "Магазин невидимых очков для тех, кто хочет быть незаметным.",
+      "Станция зарядки для телефонов с помощью солнечных панелей на носках.",
+      "Сервис доставки свежих идей в виде пузырей, которые можно лопать.",
+      "Клуб обмена смешными мемами с реальными наградами — мемы в оффлайне.",
+      "Ресторан, где блюда меняются по настроению клиентов (с датчиками счастья).",
+      "Прокат скафандров для прогулок по московским болотам.",
+      "Умные тапочки, которые танцуют за тебя на вечеринках."
+    ];
+
+    const btn = document.getElementById('generateBtn');
+    const ideaDiv = document.getElementById('idea');
+
+    btn.addEventListener('click', () => {
+      const randomIndex = Math.floor(Math.random() * ideas.length);
+      ideaDiv.textContent = ideas[randomIndex];
+    });
+  </script>
+</body>
+</html>
